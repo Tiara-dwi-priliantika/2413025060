@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio Mahasiswa</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    section {
+      min-height: 100vh;
+      padding: 40px 20px;
+      box-sizing: border-box;
+    }
+    .menu-horizontal {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 0;
+      list-style: none;
+      background-color: #f78fb3; /* Warna pink */
+      position: relative;
+    }
+    .menu-horizontal::before, .menu-horizontal::after {
+      content: "🎀";
+      font-size: 20px;
+      position: absolute;
+      top: 10px;
+    }
+    .menu-horizontal::before {
+      left: 10px;
+    }
+    .menu-horizontal::after {
+      right: 10px;
+    }
+    .menu-horizontal li a {
+      display: block;
+      padding: 10px 15px;
+      color: white;
+      text-decoration: none;
+    }
+    .menu-horizontal li a:hover {
+      background-color: #f3a1c5;
+    }
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background-color: #ffe0f0;
+      position: relative;
+    }
+    .header-container::after {
+      content: "🎀";
+      font-size: 24px;
+      position: absolute;
+      right: 10px;
+      bottom: -10px;
+    }
+    .logo-universitas {
+      height: 60px;
+    }
+    .foto-header {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .nama-universitas {
+      font-size: 14px;
+      color: #c44569;
+    }
+    .biodata-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      position: relative;
+    }
+    .biodata-container::before {
+      content: "🎀";
+      position: absolute;
+      top: -20px;
+      font-size: 24px;
+    }
+    .foto-biodata {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #fab1a0;
+    }
+    .tabel-biodata {
+      border-collapse: collapse;
+      width: 100%;
+      max-width: 500px;
+    }
+    .tabel-biodata td {
+      padding: 8px;
+      border: 1px solid #fab1a0;
+    }
+    .tabel-biodata td:first-child {
+      font-weight: bold;
+      background-color: #ffeef5;
+      width: 40%;
+    }
+    .link-output {
+      margin-top: 10px;
+    }
+    .link-output a {
+      display: block;
+      margin-bottom: 5px;
+    }
+    .dokumen-item {
+      margin-top: 10px;
+    }
+    .footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f78fb3;
+      color: white;
+      position: relative;
+    }
+    .footer::before {
+      content: "🎀";
+      font-size: 20px;
+      position: absolute;
+      left: 10px;
+      top: 10px;
+    }
+    .footer::after {
+      content: "🎀";
+      font-size: 20px;
+      position: absolute;
+      right: 10px;
+      top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <label for="uploadLogo">
+        <img src="logo-universitas.png" alt="Logo Universitas" class="logo-universitas" id="logoPreview">
+      </label>
+      <input type="file" id="uploadLogo" style="display:none" accept="image/*" onchange="previewImage(event, 'logoPreview')">
+
+      <div>
+        <h1>Portofolio Mahasiswa</h1>
+        <p class="nama-universitas">Universitas Contoh Indonesia</p>
+      </div>
+
+      <label for="uploadFotoHeader">
+        <img src="profil.jpg" alt="Foto Profil" class="foto-header" id="headerFotoPreview">
+      </label>
+      <input type="file" id="uploadFotoHeader" style="display:none" accept="image/*" onchange="previewImage(event, 'headerFotoPreview')">
+    </div>
+
+    <nav>
+      <ul class="menu-horizontal">
+        <li><a href="#beranda">Beranda</a></li>
+        <li><a href="#tentang">Tentang Saya</a></li>
+        <li><a href="#video">Tugas Video</a></li>
+        <li><a href="#dokumen">Tugas Dokumentasi</a></li>
+        <li><a href="#keaktifan">Tugas Keaktifan</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="beranda">
+      <h2>Beranda</h2>
+      <p>Halo saya mahasiswa yang sedang menempuh pendidikan pada Universitas Lampung dari FAKULTAS KEGURUAN DAN ILMU PENDIDIKAN PROGRAM STUDI S1 Pendidikan Teknologi Informasi.</p>
+    </section>
+
+    <section id="tentang">
+      <h2>Tentang Saya</h2>
+      <div class="biodata-container">
+        <label for="uploadFotoBiodata">
+          <img src="foto-biodata.jpg" alt="Foto Mahasiswa" class="foto-biodata" id="fotoBiodataPreview">
+        </label>
+        <input type="file" id="uploadFotoBiodata" style="display:none" accept="image/*" onchange="previewImage(event, 'fotoBiodataPreview')">
+
+        <table class="tabel-biodata">
+          <tr><td>Nama</td><td>Tiara Dwi Priliantika</td></tr>
+          <tr><td>NPM</td><td>2413025060</td></tr>
+          <tr><td>Kelas</td><td>24 B</td></tr>
+          <tr><td>Program Studi</td><td>Pendidikan Teknologi Informasi</td></tr>
+          <tr><td>Fakultas</td><td>Keguruan dan Ilmu Pendidikan</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <section id="video">
+      <h2>Tugas Video</h2>
+      <form id="formVideo">
+        <label for="linkYoutube">Link YouTube:</label>
+        <input type="url" id="linkYoutube" name="linkYoutube" required><br><br>
+        <button type="submit">Kirim</button>
+      </form>
+      <div id="outputVideo" class="link-output"></div>
+    </section>
+
+    <section id="dokumen">
+      <h2>Tugas Dokumentasi</h2>
+      <form id="formDokumen">
+        <label for="fileDokumen">Unggah Dokumen:</label>
+        <input type="file" id="fileDokumen" name="fileDokumen" accept=".pdf,.doc,.docx" required><br><br>
+        <button type="submit">Kirim</button>
+      </form>
+      <div id="outputDokumen" class="dokumen-item"></div>
+    </section>
+
+    <section id="keaktifan">
+      <h2>Tugas Keaktifan</h2>
+      <form id="formKeaktifan">
+        <label for="linkSpreadsheet">Link Spreadsheet:</label>
+        <input type="url" id="linkSpreadsheet" name="linkSpreadsheet" required><br><br>
+        <button type="submit">Kirim</button>
+      </form>
+      <div id="outputKeaktifan" class="link-output"></div>
+    </section>
+  </main>
+
+  <script>
+    function previewImage(event, idTarget) {
+      const reader = new FileReader();
+      reader.onload = function(){
+        const output = document.getElementById(idTarget);
+        output.src = reader.result;
+      }
+      reader.readAsDataURL(event.target.files[0]);
+    }
+
+    document.getElementById('formVideo').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const link = document.getElementById('linkYoutube').value;
+      const output = document.getElementById('outputVideo');
+      output.innerHTML += `<a href="${link}" target="_blank">${link}</a>`;
+      this.reset();
+    });
+
+    document.getElementById('formKeaktifan').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const link = document.getElementById('linkSpreadsheet').value;
+      const output = document.getElementById('outputKeaktifan');
+      output.innerHTML += `<a href="${link}" target="_blank">${link}</a>`;
+      this.reset();
+    });
+  </script>
+</body>
+</html>
